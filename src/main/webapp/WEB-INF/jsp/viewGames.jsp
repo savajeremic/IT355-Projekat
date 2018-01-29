@@ -8,14 +8,14 @@
         <div class="container">
             <div class="row">
                 <section class="content">
-                    <h1>All Games</h1>
+                    <h1><spring:message code="menu.allgames"/></h1>
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="container search">
                                     <form class="search-form">
                                         <div class="form-group has-feedback" style="float: left !important;">
-                                            <label for="search" class="sr-only">Search</label>
+                                            <label for="search" class="sr-only"><spring:message code="menu.search"/></label>
                                             <input type="text" class="form-control" name="search" id="search" placeholder="search">
                                             <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                         </div>

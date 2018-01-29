@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <section class="content">
-                    <h1>Your Games</h1>
+                    <h1><spring:message code="user.yourgames"/></h1>
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">

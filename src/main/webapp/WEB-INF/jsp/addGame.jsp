@@ -59,7 +59,7 @@
                 </form:select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Game</button>
+            <button type="submit" class="btn btn-primary"><spring:message code="menu.admin.add.game"/></button>
         </form:form>
     </div>
 </div>

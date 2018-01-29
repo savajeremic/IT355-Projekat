@@ -11,10 +11,10 @@
             <%= (success != null) ? "<div class=\"alert alert-success\">" + success + "</div>" : ""%>
             <div class="form-group">
                 <form:input type="hidden" id="id" class="form-control" placeholder="id" path="id" />
-                <form:label path="name">Name</form:label>
+                <form:label path="name"><spring:message code="game.name"/></form:label>
                 <form:input type="name" class="form-control" id="name" placeholder="name" path="name" />
             </div>
-            <button type="submit" class="btn btn-primary">ADD</button>
+            <button type="submit" class="btn btn-primary"><spring:message code="menu.admin.add.genre"/></button>
         </form:form>
     </div>
 </div>

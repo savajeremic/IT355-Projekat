@@ -140,12 +140,12 @@
                                 <c:if test="${pageContext.request.userPrincipal.name == null}">
                                     <li class="menu-cart-empty">
                                         <span class="glyphicon glyphicon-shopping-cart"></span>
-                                        <p class="menu-cart-empty-header">Your Cart Is Empty</p>
+                                        <p class="menu-cart-empty-header"><spring:message code="cart.empty"/></p>
                                         <hr/>
                                         <div>
-                                            <p> Please register or log in in order to buy </p>
-                                            <button data-toggle="modal" data-target="#loginModal" class="gd-btn menu-btn-log">Login</button>
-                                            <button data-toggle="modal" data-target="#registerModal" class="gd-btn menu-btn-reg">Register</button>
+                                            <p><spring:message code="cart.empty.login"/></p>
+                                            <button data-toggle="modal" data-target="#loginModal" class="gd-btn menu-btn-log"><spring:message code="menu.signin.log"/></button>
+                                            <button data-toggle="modal" data-target="#registerModal" class="gd-btn menu-btn-reg"><spring:message code="menu.signin.reg"/></button>
                                         </div>
                                     </li>
                                 </c:if>
@@ -157,12 +157,12 @@
                                                 <c:forEach items="${items}" var="items">
                                                     <c:set var="total" value="${total + items.game.price}" />
                                                 </c:forEach>
-                                                <p class="items-added"><span>Total price: ${total}</span>$</p>
+                                                <p class="items-added"><span><spring:message code="cart.totalprice"/>${total}</span><spring:message code="cart.dollar"/></p>
                                                 <a href="<c:url value='/checkout/'/>">
-                                                    <button type="submit" class="gd-btn checkout-btn checkout-btn-menu">Checkout</button>
+                                                    <button type="submit" class="gd-btn checkout-btn checkout-btn-menu"><spring:message code="cart.checkout"/></button>
                                                 </a>
                                                 <span class="cart-menu-text">  </span>
-                                                <a href="/SavaJeremic/cart"><p class="items-added">Your shopping cart</p></a>
+                                                <a href="/SavaJeremic/cart"><p class="items-added"><spring:message code="cart.your"/></p></a>
                                             </div>
                                             <c:forEach items="${items}" var="items">
                                                 <input type="hidden" name="id" id="id" path="id" value="${game.id}" />
@@ -177,7 +177,7 @@
                                                         <div class="pull-left">
                                                             <h4 class="title trunc-name">${items.game.name}</h4>
                                                             <a href="<c:url value='/deleteFromCart/${items.game.id}'/>">
-                                                                <p class="remove-cart-text">Remove</p>
+                                                                <p class="remove-cart-text"><spring:message code="cart.remove"/></p>
                                                             </a>
 
                                                         </div>
@@ -209,7 +209,7 @@
     <div id="loginModal" class="modal fade" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="login-box">
             <form name="form" class="form form-login" action="<c:url value='/j_spring_security_check' />" method='POST'>
-                <h2 class="form-title">log in</h2>
+                <h2 class="form-title"><spring:message code="menu.signin.log"/></h2>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <c:if test="${not empty error}">
                     <div class="error alert alert-warning">${error}</div>
@@ -224,7 +224,7 @@
                     <input type="password" placeholder="Password" id="password" class="form-control" name="password">
                 </div>
                 <div class="form-group">
-                    <button class="gd-btn menu-btn-log form-btn">Login</button>
+                    <button class="gd-btn menu-btn-log form-btn"><spring:message code="menu.signin.log"/></button>
                 </div>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             </form>
@@ -234,29 +234,29 @@
     <div id="registerModal" class="modal fade" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="login-box">
             <form:form method="POST" modelAttribute="user" class="form form-login" role="form">
-                <h2 class="form-title">Register</h2>
+                <h2 class="form-title"><spring:message code="menu.signin.reg"/></h2>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <% String success = (String) request.getAttribute("successMsg");%>
                 <%= (success != null) ? "<div class=\"alert alert-success\">" + success + "</div>" : ""%>
                 <% String error = (String) request.getAttribute("error");%>
                 <%= (error != null) ? "<div class=\"alert alert-danger\">" + error + "</div>" : ""%>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email"><spring:message code="user.email"/></label>
                     <input id="email" name="email" class="field-input">
                 </div>
 
                 <div class="form-group">
-                    <label for="username">Username:</label>
+                    <label for="username"><spring:message code="user.username"/></label>
                     <input type="username" class="form-control" name="username"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password:</label>
+                    <label for="password"><spring:message code="user.password"/></label>
                     <input type="password" class="form-control" name="password"/>
                 </div>
 
                 <div class="form-group">
-                    <button class="gd-btn menu-btn-reg form-btn">Register</button>
+                    <button class="gd-btn menu-btn-reg form-btn"><spring:message code="menu.signin.reg"/></button>
                 </div>
             </form:form>
         </div>

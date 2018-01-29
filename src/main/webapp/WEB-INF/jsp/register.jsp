@@ -11,24 +11,24 @@
             <%= (success != null) ? "<div class=\"alert alert-success\">" + success + "</div>" : ""%>
             <% String error = (String) request.getAttribute("error");%>
             <%= (error != null) ? "<div class=\"alert alert-danger\">" + error + "</div>" : ""%>
-            <h2 class="form-title">Register</h2>
+            <h2 class="form-title"><spring:message code="menu.signin.reg"/></h2>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email"><spring:message code="user.email"/></label>
                 <input id="email" name="email" class="field-input">
             </div>
               
             <div class="form-group">
-                <label for="username">Username:</label>
+                <label for="username"><spring:message code="user.username"/></label>
                 <input type="username" class="form-control" name="username"/>
             </div>
               
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password"><spring:message code="user.password"/></label>
                 <input type="password" class="form-control" name="password"/>
             </div>
               
             <div class="form-group">
-                <button class="gd-btn menu-btn-reg form-btn">Register</button>
+                <button class="gd-btn menu-btn-reg form-btn"><spring:message code="menu.signin.reg"/></button>
             </div>
         </form:form>
     </div>

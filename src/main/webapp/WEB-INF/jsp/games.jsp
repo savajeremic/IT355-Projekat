@@ -13,7 +13,7 @@
                         <div class="container search">
                             <form class="search-form">
                                 <div class="form-group has-feedback" style="float: left !important;">
-                                    <label for="search" class="sr-only">Search</label>
+                                    <label for="search" class="sr-only"><spring:message code="menu.search"/></label>
                                     <input type="text" class="form-control" name="search" id="search" placeholder="search">
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                 </div>
@@ -24,10 +24,10 @@
                                 <table class="table table-filter">
                                     <tbody>
                                         <tr>
-                                            <th width="350">Name</th>
-                                            <th width="200">Genre</th>
-                                            <th width="200">Company</th>
-                                            <th width="200">Description</th>
+                                            <th width="350"><spring:message code="game.name"/></th>
+                                            <th width="200"><spring:message code="game.genre"/></th>
+                                            <th width="200"><spring:message code="game.company"/></th>
+                                            <th width="200"><spring:message code="game.description"/></th>
                                         </tr>
                                         <c:forEach items="${games}" var="game">
                                         <tr>

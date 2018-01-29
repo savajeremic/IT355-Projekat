@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <section class="content">
-            <h1>Cart Games</h1>
+            <h1><spring:message code="cart.games"/></h1>
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -37,7 +37,7 @@
                                                                 ${items.game.name}
                                                                 <span class="pull-right">
                                                                     <i class="fa fa-heart wishlist" aria-hidden="true"></i>
-                                                                    <p class="wishlist-text"><spring:message code="game.addtowishlist"/>t</p>
+                                                                    <p class="wishlist-text"><spring:message code="game.addtowishlist"/></p>
                                                                 </span>
                                                             </h4>
                                                             <p class="summary">${items.game.genre}</p>
@@ -49,7 +49,7 @@
                                                     <td>
                                                         <h1>User, you have no games in your cart! <br />
                                                             <a href='${games}'>
-                                                                <button type="submit" class="gd-btn menu-btn-log form-btn">Add your games from here!</button>
+                                                                <button type="submit" class="gd-btn menu-btn-log form-btn"><spring:message code="cart.addyourgamesfromhere"/></button>
                                                             </a>
                                                         </h1>
                                                     </td> 
@@ -60,7 +60,7 @@
                                 </tbody>
                             </table>
                             <a href="<c:url value='/checkout/'/>">
-                                <button type="submit" class="gd-btn checkout-btn checkout-btn-menu">Checkout</button>
+                                <button type="submit" class="gd-btn checkout-btn checkout-btn-menu"><spring:message code="cart.checkout"/></button>
                             </a>
                         </div>
                     </div>
